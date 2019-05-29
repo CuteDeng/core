@@ -409,9 +409,10 @@ class Telegram
         }
 
         $post = json_decode($this->input, true);
-        if (empty($post)) {
-            throw new TelegramException('Invalid JSON!');
-        }
+        //I want to send text message 
+//         if (empty($post)) {
+//             throw new TelegramException('Invalid JSON!');
+//         }
 
         if ($response = $this->processUpdate(new Update($post, $this->bot_username))) {
             return $response->isOk();
